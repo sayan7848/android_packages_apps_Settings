@@ -106,7 +106,8 @@
             android:usesCleartextTraffic="true"
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true"
-            android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+            android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+            android:persistent="true">
 
         <uses-library android:name="org.apache.http.legacy" />
         <!-- Settings -->
@@ -3341,6 +3342,16 @@
         <service android:name=".fuelgauge.batterytip.AnomalyDetectionJobService"
                  android:permission="android.permission.BIND_JOB_SERVICE" />
 
+        <service android:enabled="true"
+          	     android:name=".AudioEnhancerService">
+        </service>
+
+        <receiver android:name=".cyanogenmod.DiracBootReceiver" android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
         <!-- This is the longest AndroidManifest.xml ever. -->
 
         <!-- Start of our manifest entries -->
