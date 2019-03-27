@@ -157,4 +157,6 @@
     <string name="switch_oneplus">OnePlus</string>
     <string name="switch_tg">Telegram</string>
 
+    <!-- Extra options -->
+    <string name="extra_category">Extra options</string>
 </resources>
